@@ -9,6 +9,8 @@ import { NewNoteComponent } from './notes/new-note/new-note.component';
 import { NoteListComponent } from './notes/note-list/note-list.component';
 import { MatTableModule } from '@angular/material/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations' 
+import { MatDialogModule } from '@angular/material/dialog';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     AppRoutingModule,
     FlexLayoutModule,
     MatTableModule,
+    MatDialogModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule
   ],
   providers: [],
