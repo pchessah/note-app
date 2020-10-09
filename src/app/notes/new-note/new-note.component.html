@@ -1,23 +1,17 @@
-<form [formGroup]="newNoteForm" fxLayout="column" fxLayoutAlign="space-around center">
-    <div fxLayout="row" fxLayoutAlign="space-around center">
-        <label for="id">Note ID: </label>
-        <input type="number" formControlName="id" required>
+<div>
+    <div class="card-header title">
+        Create your note
     </div>
-
-    <div fxLayout="row" fxLayoutAlign="space-around center">
-        <label for="title">Title: </label>
-        <input type="text" formControlName="title" required>
-    </div>
-
-    <div fxLayout="row" fxLayoutAlign="space-around center">
-        <label for="content">Note: </label>
-        <textarea formControlName="content" required></textarea>
-    </div>
-
-    <div fxLayout="row" fxLayoutAlign="space-around center">
-        <label for="dateOfCreation">Date of creation: </label>
-        <input type="text" formControlName="dateOfCreation">
-    </div> 
-
-    <button class="btn btn-success" type="submit" (click)="newNote()">Submit</button>
-</form>
+    <form [formGroup]="newNoteForm" fxLayout="column" fxLayoutAlign="space-around center">   
+            <input type="number" formControlName="id" required placeholder="Note No.">   
+      
+            <input type="text" formControlName="title" required placeholder="Note Title"> 
+       
+            <textarea formControlName="content" required placeholder="Your note..."></textarea>   
+          
+            <input type="text" formControlName="dateOfCreation" placeholder="Date">
+       
+    
+        <button [disabled]="!newNoteForm.valid" class="btn btn-success" type="submit" (click)="newNote()">Submit</button>
+    </form>
+</div>

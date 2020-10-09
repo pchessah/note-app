@@ -11,6 +11,10 @@ import { MatTableModule } from '@angular/material/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations' 
 import { MatDialogModule } from '@angular/material/dialog';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from "@angular/common/http";
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { MockServerService } from './mock-server.service';
+import { SingleNoteComponent } from './notes/single-note/single-note.component';
 
 @NgModule({
   declarations: [
@@ -18,16 +22,21 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     ErrorPageComponent,
     NewNoteComponent,
-    NoteListComponent
+    NoteListComponent,
+    SingleNoteComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FlexLayoutModule,
     MatTableModule,
     MatDialogModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      MockServerService, { dataEncapsulation: false }
+    ),
   ],
   providers: [],
   bootstrap: [AppComponent]

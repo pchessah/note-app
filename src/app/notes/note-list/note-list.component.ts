@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { INote } from '../inote';
+import { NotesServiceService } from '../notes-service.service';
 
 
 @Component({
@@ -9,20 +10,16 @@ import { INote } from '../inote';
 })
 export class NoteListComponent implements OnInit {
   pageTitle: string = "Your Notes";
-  Notes: INote[]=[
-    {id: 1,title:"church", content:"Go to church", dateOfCreation:"10/10/10"},
-    {id: 2,title:"church", content:"Go to church", dateOfCreation:"10/10/10"},
-    {id: 3,title:"church", content:"Go to church", dateOfCreation:"10/10/10"},
-    {id: 4,title:"church", content:"Go to church", dateOfCreation:"10/10/10"},
-    {id: 5,title:"church", content:"Go to church", dateOfCreation:"10/10/10"},
-    {id: 6,title:"church", content:"Go to church", dateOfCreation:"10/10/10"},
-  ]
-
+  Notes: INote[]
   displayedColumns: string[] = ['position', 'title', 'note', 'actions'];
-  dataSource = this.Notes;
-  constructor() { }
+  dataSource
+  constructor( private _notesService: NotesServiceService) { }
 
   ngOnInit(): void {
+    this._notesService.getNotes().subscribe(notes=>{
+      this.Notes = notes;
+      this.dataSource=this.Notes;
+    });
   }
 
 }
