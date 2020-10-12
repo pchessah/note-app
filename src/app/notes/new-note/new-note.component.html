@@ -8,9 +8,12 @@
    
         <textarea formControlName="content" required placeholder="Your note..."></textarea>   
       
-        <input type="text" formControlName="dateOfCreation" placeholder="Date">
+        <input type="string" formControlName="dateOfCreation" placeholder="Date" [value]='currentDate'>
    
 
-    <button [disabled]="!newNoteForm.valid" class="btn btn-success" type="submit" (click)="newNote()">Submit</button>
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+        <button [disabled]="!newNoteForm.valid" class="btn btn-success" type="submit" (click)="newNote()">Submit</button>
+        <button class="btn btn-outline-danger" (click)="goBack()">Cancel</button>
+    </div>   
 </form>
 

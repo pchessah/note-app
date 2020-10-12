@@ -7,7 +7,7 @@
     </div>
     <div class="card-footer" fxLayout="row" fxLayoutAlign="space-around center">
         <button [routerLink]="['/all-notes']" routerLinkActive="router-link-active"  class="btn btn-info"> Back</button>
-        <button class="btn btn-outline-info">Edit</button>
+        <button class="btn btn-outline-primary" [routerLink]="['/edit-note', singleNote.id]"routerLinkActive="router-link-active">Edit</button>
         <button class="btn btn-outline-danger" (click)="deleteNote( singleNote )">Delete</button>
     </div>
 </div>

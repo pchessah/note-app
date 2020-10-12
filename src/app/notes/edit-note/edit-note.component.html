@@ -1,16 +1,21 @@
-<div class="card-header title">
-  id: {{singleNote?.id}} Title: {{singleNote?.title}}
-</div>
-<form [formGroup]="editNoteForm" fxLayout="column" fxLayoutAlign="space-around center">   
-        <input type="number" formControlName="id" required placeholder="Note No." disabled>   
-  
-        <input type="text" formControlName="title" required placeholder="Note Title"> 
-   
-        <textarea formControlName="content" required placeholder="Your note..."></textarea>   
+<div class="card center-in-div">
+    <div class="card-header title">
+        id: {{singleNote?.id}} Title: {{singleNote?.title}}
+      </div>
+      <form [formGroup]="editNoteForm" fxLayout="column" fxLayoutAlign="space-around center">   
+              <input type="number" formControlName="id" required placeholder="Note No." disabled>   
+        
+              <input type="text" formControlName="title" required placeholder="Note Title"> 
+         
+              <textarea formControlName="content" required placeholder="Your note..."></textarea>   
+            
+              <input type="date" formControlName="dateOfCreation" placeholder="Date">
       
-        <input type="text" formControlName="dateOfCreation" placeholder="Date">
-   
+              <div fxLayout="row" fxLayoutAlign="space-around center">
+                  <button [disabled]="!editNoteForm.valid" class="btn btn-success" type="submit" (click)="saveEditedForm()">Confirm Changes</button>
+                  <button class="btn btn-outline-danger" (click)="goBack()">Cancel</button>
+              </div>    
+      </form>
+</div>
 
-    <button [disabled]="!editNoteForm.valid" class="btn btn-success" type="submit" (click)="saveEditedForm()">Confirm Changes</button>
-</form>
 

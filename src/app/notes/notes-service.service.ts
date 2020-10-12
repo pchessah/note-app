@@ -62,8 +62,6 @@ export class NotesServiceService  {
   }
 
 
-
-
   handleError(err: HttpErrorResponse){
     let errorMessage = "";
     //check if error is on the client side

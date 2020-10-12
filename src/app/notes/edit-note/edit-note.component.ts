@@ -28,9 +28,7 @@ export class EditNoteComponent implements OnInit {
     this._noteService.getNotes().subscribe( notes=>{
       this.notes = notes;  
       this.getSingleNote();  
-    }); 
-
-   
+    });    
   }
 
   getSingleNote(): void{
@@ -40,12 +38,11 @@ export class EditNoteComponent implements OnInit {
   }
 
   saveEditedForm(): void{  
-    this.singleNote = this.editNoteForm.value
+    this.singleNote = this.editNoteForm.value;
+    alert(`The note with id:  ${this.singleNote.id} was edited.`)
     this._noteService.editNote(this.singleNote).subscribe(()=>{
       this.goBack();
-    })
-
-
+    });
   }
 
   goBack(): void{
