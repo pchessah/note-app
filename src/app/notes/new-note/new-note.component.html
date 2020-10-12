@@ -1,16 +1,9 @@
 <div class="card-header title">
     Create your note
 </div>
-<form [formGroup]="newNoteForm" fxLayout="column" fxLayoutAlign="space-around center">   
-        <input type="number" formControlName="id" required placeholder="Note No.">   
-  
-        <input type="text" formControlName="title" required placeholder="Note Title"> 
-   
-        <textarea formControlName="content" required placeholder="Your note..."></textarea>   
-      
-        <input type="string" formControlName="dateOfCreation" placeholder="Date" [value]='currentDate'>
-   
-
+<form [formGroup]="newNoteForm" fxLayout="column" fxLayoutAlign="space-around center">    
+        <input type="text" formControlName="title" required placeholder="Note Title">   
+        <textarea formControlName="content" required placeholder="Your note..."></textarea> 
     <div fxLayout="row" fxLayoutAlign="space-between center">
         <button [disabled]="!newNoteForm.valid" class="btn btn-success" type="submit" (click)="newNote()">Submit</button>
         <button class="btn btn-outline-danger" (click)="goBack()">Cancel</button>

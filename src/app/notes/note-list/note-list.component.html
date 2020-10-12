@@ -1,4 +1,13 @@
-<div class="card center-in-div">
+<ng-template #noContent>
+  <div class="center-in-div">
+    <div class="card-body">
+      <strong><h2>No Notes, click to  <button (click)="createNewNote()" class="btn btn-primary">CREATE NEW</button> </h2></strong>
+    </div>
+  </div>
+</ng-template>
+
+
+  <div class="card center-in-div" *ngIf="Notes && Notes.length;else noContent">
     <div class="card-header title"> {{ pageTitle }}</div>
     <div class="card-body">
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z1">
@@ -6,11 +15,6 @@
             <!--- Note that these columns can be defined in any order.
                   The actual rendered columns are set as a property on the row definition" -->
           
-            <!-- Position Column -->
-            <ng-container matColumnDef="position">
-              <th mat-header-cell *matHeaderCellDef class="title"> No. </th>
-              <td mat-cell *matCellDef="let singleNote"> {{singleNote.id}} </td>
-            </ng-container>
           
             <!-- Title Column -->
             <ng-container matColumnDef="title">
@@ -44,7 +48,9 @@
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
-          
-          
-    </div>
+      </div>
+      <div class="card-footer" fxLayout="row" fxLayoutAlign="center center">
+        <button (click)="createNewNote()" class="btn btn-outline-success">New Note +</button>  
+      </div>
 </div>
+

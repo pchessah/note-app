@@ -32,7 +32,7 @@ export class EditNoteComponent implements OnInit {
   }
 
   getSingleNote(): void{
-    const id = +this.route.snapshot.paramMap.get("id");
+    const id = this.route.snapshot.paramMap.get("id");
     this.singleNote = this.notes.find(note => note.id === id);
     this.editNoteForm.controls["id"].setValue(this.singleNote.id);
   }

@@ -28,7 +28,7 @@ export class NotesServiceService  {
   getSingleNote(id: number): Observable<INote>{
     const notesUrl =`${this.notesUrl}/${id}`
     return this.http.get<INote>(notesUrl).pipe(
-      tap(data => console.log(JSON.stringify(data))),
+      tap(data => console.log(JSON.stringify(data.title))),
       catchError(this.handleError)
     )
   }
@@ -37,7 +37,7 @@ export class NotesServiceService  {
 
   addNote(note: INote): Observable<INote>{
     return this.http.post<INote>(this.notesUrl, note, this.httpOptions).pipe(
-      tap((newNote: INote)=> console.log("added new note"+JSON.stringify(newNote))),
+      tap((newNote: INote)=> console.log("added new note"+JSON.stringify(newNote.title))),
       catchError(this.handleError)
     );
   }
@@ -49,7 +49,7 @@ export class NotesServiceService  {
     const url = `${this.notesUrl}/${id}`;
 
     return this.http.delete<INote>(url ,this.httpOptions).pipe(
-      tap(data=> console.log(JSON.stringify(data)+ " was deleted")),
+      tap(data=> console.log(JSON.stringify(data.title)+ " was deleted")),
       catchError(this.handleError)
     )
   }

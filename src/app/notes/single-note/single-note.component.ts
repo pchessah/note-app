@@ -22,7 +22,9 @@ export class SingleNoteComponent implements OnInit {
         this.Notes = notes;
         this.routes.paramMap.subscribe(params =>{
           let id = params.get("id");
-          this.singleNote = this.Notes.find(note => note.id === +id)
+          console.log(this.Notes);
+          this.singleNote = this.Notes.find(note => note.id === id)
+    
         });
       },
       error: err => this.errorMessage = err      
