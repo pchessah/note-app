@@ -28,7 +28,6 @@
               "src/assets"
             ],
             "styles": [
-              // "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -93,7 +92,6 @@
               "src/assets"
             ],
             "styles": [
-              // "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -127,5 +125,8 @@
       }
     }
   },
-  "defaultProject": "note-app"
+  "defaultProject": "note-app",
+  "cli": {
+    "analytics": "83f9cb29-d9e6-432d-a848-a3bb0b163cb7"
+  }
 }
