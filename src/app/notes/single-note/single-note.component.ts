@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { INote } from '../inote';
 import { NotesServiceService } from '../notes-service.service';
 
@@ -14,7 +14,7 @@ export class SingleNoteComponent implements OnInit {
   singleNote: INote;
   errorMessage: string;
 
-  constructor( private routes: ActivatedRoute, private _notesService:NotesServiceService) { }
+  constructor(private router:Router, private routes: ActivatedRoute, private _notesService:NotesServiceService) { }
 
   ngOnInit(): void {
     this._notesService.getNotes().subscribe({
@@ -27,6 +27,13 @@ export class SingleNoteComponent implements OnInit {
       },
       error: err => this.errorMessage = err      
     })
+  }
+
+  deleteNote( singleNote: INote): void{
+    this.Notes = this.Notes.filter(otherNotes=> otherNotes !== singleNote);
+    alert(`${singleNote.title} deleted!`);
+    this._notesService.deleteNote(singleNote).subscribe();
+    this.router.navigate(["/all-notes"]);
   }
 
 }

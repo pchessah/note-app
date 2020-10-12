@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { INote } from '../inote';
 import { MatDialogRef } from "@angular/material/dialog"
+import { NotesServiceService } from '../notes-service.service';
 
 @Component({
   selector: 'app-new-note',
@@ -10,7 +11,8 @@ import { MatDialogRef } from "@angular/material/dialog"
 })
 export class NewNoteComponent implements OnInit {
 
-  note: INote
+  singleNote: INote;
+  notes: INote[];
 
   newNoteForm = this.fb.group({
     id:[""],
@@ -18,10 +20,13 @@ export class NewNoteComponent implements OnInit {
     content: [""],
     dateOfCreation:[""]
   })
-  constructor( private fb: FormBuilder, public dialogRef: MatDialogRef<NewNoteComponent>) { }
+  constructor( private _noteService: NotesServiceService, private fb: FormBuilder, public dialogRef: MatDialogRef<NewNoteComponent>) { }
 
   newNote() :void{
-    this.note = this.newNoteForm.value;
+    this.singleNote = this.newNoteForm.value;
+    this._noteService.addNote(this.singleNote).subscribe(note=>{
+      this.notes.push(note)
+    });    
     this.dialogRef.close('saved');
   }
 

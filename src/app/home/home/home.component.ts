@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog"
+import { MatDialog } from "@angular/material/dialog";
 import { NewNoteComponent } from 'src/app/notes/new-note/new-note.component';
 
 @Component({

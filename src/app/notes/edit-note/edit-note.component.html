@@ -1,0 +1,16 @@
+<div class="card-header title">
+  id: {{singleNote?.id}} Title: {{singleNote?.title}}
+</div>
+<form [formGroup]="editNoteForm" fxLayout="column" fxLayoutAlign="space-around center">   
+        <input type="number" formControlName="id" required placeholder="Note No." disabled>   
+  
+        <input type="text" formControlName="title" required placeholder="Note Title"> 
+   
+        <textarea formControlName="content" required placeholder="Your note..."></textarea>   
+      
+        <input type="text" formControlName="dateOfCreation" placeholder="Date">
+   
+
+    <button [disabled]="!editNoteForm.valid" class="btn btn-success" type="submit" (click)="saveEditedForm()">Confirm Changes</button>
+</form>
+

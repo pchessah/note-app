@@ -3,6 +3,7 @@ import { INote } from '../inote';
 import { NotesServiceService } from '../notes-service.service';
 
 
+
 @Component({
   selector: 'app-note-list',
   templateUrl: './note-list.component.html',
@@ -20,6 +21,12 @@ export class NoteListComponent implements OnInit {
       this.Notes = notes;
       this.dataSource=this.Notes;
     });
+  }
+
+  deleteNote( singleNote: INote): void{
+    this.Notes = this.Notes.filter(otherNotes=> otherNotes !== singleNote);
+    this.dataSource=this.Notes;
+    this._notesService.deleteNote(singleNote).subscribe();
   }
 
 }

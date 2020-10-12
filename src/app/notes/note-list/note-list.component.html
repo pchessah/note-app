@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card center-in-div">
     <div class="card-header title"> {{ pageTitle }}</div>
     <div class="card-body">
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z1">
@@ -29,8 +29,9 @@
               <th mat-header-cell *matHeaderCellDef class="title"> Actions </th>
               <td mat-cell *matCellDef="let singleNote">
                    <button [routerLink]="['/all-notes', singleNote.id]" routerLinkActive="router-link-active"  class="btn btn-info">View</button>
-                   <button class="btn btn-outline-primary">Edit</button>
-                   <button class="btn btn-outline-danger">Delete</button>
+                   <button class="btn btn-outline-primary" [routerLink]="['/edit-note', singleNote.id]"
+                   routerLinkActive="router-link-active">Edit</button>
+                   <button class="btn btn-outline-danger" (click)="deleteNote( singleNote )">Delete</button>
                  </td>
             </ng-container>
           

@@ -15,6 +15,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { MockServerService } from './mock-server.service';
 import { SingleNoteComponent } from './notes/single-note/single-note.component';
+import { EditNoteComponent } from './notes/edit-note/edit-note.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SingleNoteComponent } from './notes/single-note/single-note.component';
     ErrorPageComponent,
     NewNoteComponent,
     NoteListComponent,
-    SingleNoteComponent
+    SingleNoteComponent,
+    EditNoteComponent
   ],
   imports: [
     BrowserModule,
