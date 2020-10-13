@@ -12,8 +12,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MatDialogModule } from '@angular/material/dialog';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { MockServerService } from './libs/services/mock-server.service';
+import { MatCardModule } from '@angular/material/card';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+
 import { SingleNoteComponent } from './pages/notes/single-note/single-note.component';
 import { EditNoteComponent } from './pages/notes/edit-note/edit-note.component';
 
@@ -24,6 +26,14 @@ const PAGES = [
   NoteListComponent,
   SingleNoteComponent,
   EditNoteComponent
+]
+
+const MAT_MODULES = [
+  MatPaginatorModule,
+  MatSortModule,
+  MatTableModule,
+  MatDialogModule,
+  MatCardModule
 ]
 
 const REUSABLE = [
@@ -38,12 +48,12 @@ const REUSABLE = [
   imports: [
     BrowserModule,
     FlexLayoutModule,
-    MatTableModule,
-    MatDialogModule,
+    ...MAT_MODULES,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
+
     // HttpClientInMemoryWebApiModule.forRoot(
     //   MockServerService, { dataEncapsulation: false }
     // ),
