@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { INote } from "./notes/inote";
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 
 @Injectable({

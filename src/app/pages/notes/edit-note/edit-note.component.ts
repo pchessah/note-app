@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { INote } from '../inote';
-import { NotesServiceService } from '../notes-service.service';
+import { INote } from '../../../libs/interfaces/inote';
+import { NotesServiceService } from '../../../libs/services/notes-service.service';
 
 @Component({
   selector: 'app-edit-note',

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { INote } from '../inote';
+import { INote } from '../../../libs/interfaces/inote';
 import { MatDialogRef } from "@angular/material/dialog"
-import { NotesServiceService } from '../notes-service.service';
+import { NotesServiceService } from '../../../libs/services/notes-service.service';
 import { Router } from '@angular/router';
 import { v4 as uniqueId } from "uuid"
 
