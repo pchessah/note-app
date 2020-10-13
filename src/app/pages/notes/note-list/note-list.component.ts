@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { INote } from '../inote';
-import { NotesServiceService } from '../notes-service.service';
+import { INote } from '../../../libs/interfaces/inote';
+import { NotesServiceService } from '../../../libs/services/notes-service.service';
 import { MatDialog } from "@angular/material/dialog";
-import { NewNoteComponent } from 'src/app/notes/new-note/new-note.component';
+import { NewNoteComponent } from '../new-note/new-note.component';
 
 
 

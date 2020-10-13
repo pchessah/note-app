@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from "@angular/material/dialog";
-import { NewNoteComponent } from 'src/app/notes/new-note/new-note.component';
+import { NewNoteComponent } from '../../notes/new-note/new-note.component';
 
 @Component({
   selector: 'app-home',

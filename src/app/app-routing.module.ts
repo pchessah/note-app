@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ErrorPageComponent } from './error-page/error-page.component';
-import { HomeComponent } from './home/home/home.component';
-import { EditNoteComponent } from './notes/edit-note/edit-note.component';
-import { NoteListComponent } from './notes/note-list/note-list.component';
-import { SingleNoteComponent } from './notes/single-note/single-note.component';
+import { ErrorPageComponent } from './pages/error-page/error-page.component';
+import { HomeComponent } from './pages/home/home/home.component';
+import { EditNoteComponent } from './pages/notes/edit-note/edit-note.component';
+import { NoteListComponent } from './pages/notes/note-list/note-list.component';
+import { SingleNoteComponent } from './pages/notes/single-note/single-note.component';
 
 const routes: Routes = [
   {path: "home", component: HomeComponent},
