@@ -18,6 +18,7 @@ import { MatSortModule } from '@angular/material/sort';
 
 import { SingleNoteComponent } from './pages/notes/single-note/single-note.component';
 import { EditNoteComponent } from './pages/notes/edit-note/edit-note.component';
+import { GitListComponent } from './pages/git-list/git-list.component';
 
 const PAGES = [
   HomeComponent,
@@ -44,6 +45,7 @@ const REUSABLE = [
   declarations: [
     AppComponent,
     ...PAGES,
+    GitListComponent,
   ],
   imports: [
     BrowserModule,
