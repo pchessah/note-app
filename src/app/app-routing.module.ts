@@ -7,12 +7,12 @@ import { NoteListComponent } from './pages/notes/note-list/note-list.component';
 import { SingleNoteComponent } from './pages/notes/single-note/single-note.component';
 
 const routes: Routes = [
-  {path: "home", component: HomeComponent},
-  {path: "all-notes", component: NoteListComponent},
-  {path: "all-notes/:id", component: SingleNoteComponent},
-  {path: "edit-note/:id", component: EditNoteComponent},
-  {path: "", redirectTo: "/home", pathMatch: "full"},
-  {path: "**" , component: ErrorPageComponent}
+  { path: "home", component: HomeComponent },
+  { path: "all-notes", component: NoteListComponent },
+  { path: "all-notes/:id", component: SingleNoteComponent },
+  { path: "edit-note/:id", component: EditNoteComponent },
+  { path: "", redirectTo: "/home", pathMatch: "full" },
+  { path: "**", component: ErrorPageComponent }
 ];
 
 @NgModule({
