@@ -4,10 +4,6 @@ import { MatTableDataSource } from '@angular/material/table';
 import { IGithubApi, IGithubIssue } from 'src/app/libs/interfaces';
 import { GithubApiService } from 'src/app/libs/services';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-
-
-
 
 
 @Component({
@@ -16,7 +12,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./git-list.component.scss']
 })
 export class GitListComponent implements OnInit, AfterViewInit {
-  displayedColumns: string[] = ['created_at', 'state', 'number', 'title'];
+  displayedColumns: string[] = ['select','created_at', 'state', 'number', 'title'];
   dataSource = new MatTableDataSource<IGithubIssue>();
   selection = new SelectionModel<IGithubIssue>(true, []);
   data: IGithubIssue[] = [];
