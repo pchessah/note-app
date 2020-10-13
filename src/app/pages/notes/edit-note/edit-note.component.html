@@ -7,7 +7,7 @@
               <input type="text" formControlName="title" required placeholder="Note Title" [value]="singleNote?.title">         
               <textarea formControlName="content" required placeholder="Your note..." [value]="singleNote?.content"></textarea>
               <div fxLayout="row" fxLayoutAlign="space-around center">
-                  <button [disabled]="!editNoteForm.valid" class="btn btn-success" type="submit" (click)="saveEditedForm()">Confirm Changes</button>
+                  <button  class="btn btn-success" type="submit" (click)="saveEditedForm()">Confirm Changes</button>
                   <button class="btn btn-outline-danger" (click)="goBack()">Cancel</button>
               </div>    
       </form>
