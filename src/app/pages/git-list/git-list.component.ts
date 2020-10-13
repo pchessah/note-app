@@ -4,10 +4,6 @@ import { MatTableDataSource } from '@angular/material/table';
 import { IGithubApi, IGithubIssue } from 'src/app/libs/interfaces';
 import { GithubApiService } from 'src/app/libs/services';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-
-
-
 
 
 @Component({

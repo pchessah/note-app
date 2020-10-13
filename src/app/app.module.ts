@@ -15,7 +15,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { MatCardModule } from '@angular/material/card';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-import { MatCheckboxModule } from "@angular/material/checkbox"
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { SingleNoteComponent } from './pages/notes/single-note/single-note.component';
 import { EditNoteComponent } from './pages/notes/edit-note/edit-note.component';
